@@ -1,20 +1,26 @@
 ---
 // Componente optimizador de Astro - Importar la imagen
-import { Image } from 'astro:assets';
-import miFoto from '../assets/img/bb.jpg';
+import { Image } from "astro:assets";
+import miFoto from "../assets/img/bb.jpg";
+
+import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
+<Layout
+    title="Portfolio | Carlos Salcán - Desarrollador y Programador Web"
+    description="Contrata a Carlos Daniel para crear tus aplicaciones web y resolver tus problemas con soluciones digitales únicas, modernas y eficientes ✨🚀."
+>
     <section class="max-w-280 mx-auto py-40 px-4">
-        <Image 
-            class="rounded-full w-12 h-12 object-cover" 
-            src={miFoto} 
+        <Image
+            class="rounded-full size-12 object-cover"
+            src={miFoto}
             alt="cds photo"
         />
 
