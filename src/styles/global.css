@@ -6,6 +6,7 @@
 
 html {
     font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,4 +14,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }

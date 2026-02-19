@@ -10,10 +10,13 @@ import Badge from "../components/Badge.astro";
 
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/GitHub.astro";
 import MailIcon from "../components/icons/Mail.astro";
-import Experience from "../components/Experience.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -42,8 +45,8 @@ import Experience from "../components/Experience.astro";
         </h1>
 
         <h2 class="text-zinc-400 text-xl mt-6 max-w-3xl leading-relaxed">
-            Ingeniero en Ciencias de la Computación, Desarrollador Web &
-            Analista de Datos de Quito, Ecuador 🇪🇨. Construyo soluciones
+            Ingeniero en Ciencias de la Computación, <span class="text-yellow-400">Desarrollador Web &
+            Analista de Datos de Quito</span>, Ecuador 🇪🇨. Construyo soluciones
             digitales funcionales, eficientes y estratégicamente diseñadas para
             optimizar procesos y generar impacto.
         </h2>
@@ -64,7 +67,10 @@ import Experience from "../components/Experience.astro";
         </nav>
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="experiencie">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+            <Briefcase class="size-12" />
+            Experiencia Laboral</h2>
         <Experience />
     </SectionContainer>
 </Layout>
