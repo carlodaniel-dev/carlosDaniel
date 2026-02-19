@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro'; // Asegúrate de que esté importado
+import Header from "../components/Header.astro"; 
 
 interface Props {
 	title: string;
@@ -10,19 +10,22 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es"> <head>
+<html lang="es">
+	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} /> <meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative text-white"> <div
+	<body class="relative text-white">
+		<div
 			class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
 		>
 		</div>
 		<Header />
-		<main class="max-w-[1120px] mx-auto">
+		<main class="max-w-280 mx-auto">
 			<slot />
 		</main>
 	</body>

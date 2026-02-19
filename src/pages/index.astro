@@ -8,6 +8,10 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
 
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -26,19 +30,35 @@ import Badge from "../components/Badge.astro";
 
         <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
             Hey, Soy Carlos Daniel
-            <a href="https://www.linkedin.com/in/carlos-salcan/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex justify-center items-center"
+            <a
+                href="https://www.linkedin.com/in/carlos-salcan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex justify-center items-center"
                 ><Badge>Disponible para trabajar</Badge></a
             >
         </h1>
 
         <h2 class="text-zinc-400 text-xl mt-6 max-w-3xl leading-relaxed">
             Ingeniero en Ciencias de la Computación, Desarrollador Web &
-            Analista de Datos de Quito, Ecuador 🇪🇨. Construyo soluciones digitales funcionales,
-            eficientes y estratégicamente diseñadas para optimizar procesos y
-            generar impacto real.
+            Analista de Datos de Quito, Ecuador 🇪🇨. Construyo soluciones
+            digitales funcionales, eficientes y estratégicamente diseñadas para
+            optimizar procesos y generar impacto.
         </h2>
+
+        <nav class="flex gap-x-3 mt-6">
+            <SocialPill href="https://www.linkedin.com/in/carlos-salcan/">
+                <LinkedInIcon class="size-6" />
+                LinkedIn
+            </SocialPill>
+            <SocialPill href="https://github.com/carlodaniel-dev">
+                <GithubIcon class="size-6" />
+                Git Hub
+            </SocialPill>
+            <SocialPill href="https://github.com/CarlosSalcan">
+                <MailIcon class="size-6" />
+                carlosdanielsm.dev@gmail.com
+            </SocialPill>
+        </nav>
     </section>
 </Layout>
