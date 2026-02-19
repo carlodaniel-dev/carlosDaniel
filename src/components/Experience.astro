@@ -1,0 +1,30 @@
+---
+import type { date } from "astro:schema";
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Marzo 2024 - Julio 2024",
+        title: "Desarrollador Web & Sistemas － Coordinación Zonal 9 de Salud",
+        description:
+            "Responsable del diseño, desarrollo y mantenimiento de sistemas internos. Lider en reingeniería y optimización del sistema de inventario tecnológico institucional. Identificando fallos en la arquitectura anterior y desarrollo una solución que eliminó errores de registro, garantizando la integridad de los datos y mejorando significativamente la eficiencia en la gestión de recursos.",
+    },
+    {
+        date: "Noviembre 2023 - Febrero 2024",
+        title: "Desarrollador Web Frontend － Centro La Perfecta Alegria",
+        description:
+            "Diseño y desarrollo de interfaces responsive y accesibles. Optimización de presencia digital mediante estrategias técnicas y creativas, mejorando la experiencia de usuario y el posicionamiento de la organización.",
+        link: "#", // Si existe una demo o enlace relevante, se puede agregar aquí
+    },
+];
+---
+
+<ol class="relative border-s border-default">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-6">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
