@@ -11,6 +11,7 @@ import Badge from "../components/Badge.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/GitHub.astro";
@@ -26,7 +27,7 @@ import CodeIcon from "../components/icons/Code.astro";
     title="Portfolio | Carlos Salcán - Desarrollador y Programador Web"
     description="Contrata a Carlos Daniel para crear tus aplicaciones web y resolver tus problemas con soluciones digitales únicas, modernas y eficientes ✨🚀."
 >
-    <SectionContainer>
+    <SectionContainer class="py-20">
         <Image
             class="rounded-full size-12 object-cover"
             src={miFoto}
@@ -78,6 +79,6 @@ import CodeIcon from "../components/icons/Code.astro";
         <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
             <CodeIcon class="size-12" />
             Proyectos</h2>
-            <!-- 1:17:24 -->
+            <Projects />
     </SectionContainer>
 </Layout>
