@@ -3,9 +3,9 @@ const PROJECTS = [
     {
         title: "Project One",
         description: "A brief description of Project One.",
-        link: "#",
-        github: "#",
-        image: "#",
+        link: " https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
+        github: "https://github.com/carlodaniel-dev/centro-perfectaAlegria",
+        image: "/projects/perfectAlegria.webp",
         tags: ["HTML", "CSS", "JavaScript"],
     },
 ];
@@ -14,14 +14,15 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
             <ul>
                 {tags.map((tag) => (
                     <li>{tag}</li>
                 ))}
             </ul>
-            <img src={image} alt={`Captura de pantalla del proyecto ${image}`}/>
+            <img class="rounded shadow-2xl shadow-white/20"
+            src={image} alt={`Captura de pantalla del proyecto ${image}`}/>
         </article>
     ))
 }
