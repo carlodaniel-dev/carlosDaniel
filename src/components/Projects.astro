@@ -6,17 +6,17 @@ import Js from "./icons/Js.astro";
 const TAGS = {
     HTML: {
         name: "HTML",
-        color: "bg-orange-500",
+        color: "bg-[#e34f26]/10 text-[#ff6d45] border border-[#e34f26]/20",
         icon: Html,
     },
     CSS: {
         name: "CSS",
-        color: "bg-blue-500",
+        color: "bg-[#1572b6]/10 text-[#30a9ff] border border-[#1572b6]/20",
         icon: Css,
     },
     JS: {
         name: "JavaScript",
-        color: "bg-yellow-500",
+        color: "bg-[#f7df1e]/10 text-[#f7df1e] border border-[#f7df1e]/20",
         icon: Js,
     },
 };
@@ -39,11 +39,11 @@ const PROJECTS = [
         <article>
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-4 flex-row">
+            <ul class="flex flex-row mb-4 gap-x-2">
                 {tags.map((tag) => (
                     <li>
                         <span
-                            class={`flex gap-x-2 rounded-full text-sm font-medium ${tag.color} py-2 px-1`}
+                            class={`flex items-center gap-x-2 rounded-full text-xs font-semibold ${tag.color} py-1 px-3 shadow-sm transition-all hover:scale-105`}
                         >
                             <tag.icon class="size-4" />
                             {tag.name}
