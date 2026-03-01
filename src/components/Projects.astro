@@ -1,12 +1,35 @@
 ---
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Js from "./icons/Js.astro";
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        color: "bg-orange-500",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        color: "bg-blue-500",
+        icon: Css,
+    },
+    JS: {
+        name: "JavaScript",
+        color: "bg-yellow-500",
+        icon: Js,
+    },
+};
+
 const PROJECTS = [
     {
-        title: "Project One",
-        description: "A brief description of Project One.",
-        link: " https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
+        title: "Centro Perfecta Alegría - Desarrollo Psicoemocional Integral",
+        description:
+            "Landing page profesional diseñada para optimizar la presencia digital de un centro de salud mental. Enfocada en la experiencia de usuario (UX), con un diseño limpio, totalmente responsivo y una arquitectura de información clara para facilitar el contacto de los pacientes.",
+        link: "https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
         github: "https://github.com/carlodaniel-dev/centro-perfectaAlegria",
         image: "/projects/perfectAlegria.webp",
-        tags: ["HTML", "CSS", "JavaScript"],
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
 ];
 ---
@@ -14,15 +37,25 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, link, github, image, tags }) => (
         <article>
-            <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul>
+            <ul class="flex gap-x-4 flex-row">
                 {tags.map((tag) => (
-                    <li>{tag}</li>
+                    <li>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-sm font-medium ${tag.color} py-2 px-1`}
+                        >
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
                 ))}
             </ul>
-            <img class="rounded shadow-2xl shadow-white/20"
-            src={image} alt={`Captura de pantalla del proyecto ${image}`}/>
+            <img
+                class="rounded shadow-2xl shadow-white/20"
+                src={image}
+                alt={`Captura de pantalla del proyecto ${image}`}
+            />
         </article>
     ))
 }
