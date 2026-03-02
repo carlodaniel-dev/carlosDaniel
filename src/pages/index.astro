@@ -1,21 +1,15 @@
 ---
-// Componente optimizador de Astro - Importar la imagen
-import { Image } from "astro:assets";
-import miFoto from "../assets/img/bb.jpg";
-
 import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
 
+import TitleSection from "../components/TitleSeccion.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import SocialPill from "../components/SocialPill.astro";
+
+import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import GithubIcon from "../components/icons/GitHub.astro";
-import MailIcon from "../components/icons/Mail.astro";
 import BriefcaseIcon from "../components/icons/Briefcase.astro";
 import CodeIcon from "../components/icons/Code.astro";
 
@@ -27,68 +21,23 @@ import CodeIcon from "../components/icons/Code.astro";
     title="Portfolio | Carlos Salcán - Desarrollador y Programador Web"
     description="Contrata a Carlos Daniel para crear tus aplicaciones web y resolver tus problemas con soluciones digitales únicas, modernas y eficientes ✨🚀."
 >
-    <SectionContainer class="py-25 flex flex-col gap-y-10">
-        <article class="flex items-center gap-x-7 mb-10">
-            <Image
-                class="rounded-full size-16 object-cover shadow-lg"
-                src={miFoto}
-                alt="Foto de Carlos Daniel"
-            />
-            <a
-                href="https://www.linkedin.com/in/carlos-salcan/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex transition hover:scale-105"
-                ><Badge>Disponible para trabajar</Badge></a
-            >
-        </article>
-
-        <h1
-            class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-        >
-            Hey, soy CarlosDaniel
-        </h1>
-
-        <h2
-            class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-        >
-            Ingeniero en Ciencias de la Computación, <span
-                class="text-yellow-500"
-                >Desarrollador Web & Analista de Datos de Quito</span
-            >, Ecuador 🇪🇨. Construyo soluciones digitales funcionales,
-            eficientes y estratégicamente diseñadas para optimizar procesos y
-            generar impacto.
-        </h2>
-
-        <nav class="flex gap-4 mt-8 flex-wrap">
-            <SocialPill href="https://github.com/carlodaniel-dev">
-                <GithubIcon class="size-4 md:size-6" />
-                GitHub
-            </SocialPill>
-            <SocialPill href="https://www.linkedin.com/in/carlos-salcan/">
-                <LinkedInIcon class="size-4 md:size-6" />
-                LinkedIn
-            </SocialPill>
-            <SocialPill href="mailto:carlosdanielsm.dev@gmail.com">
-                <MailIcon class="size-4 md:size-6" />
-                Contactame
-            </SocialPill>
-        </nav>
+    <SectionContainer class="py-16 md:py-20">
+        <Hero />
     </SectionContainer>
 
     <SectionContainer id="experiencie">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-            <BriefcaseIcon class="size-12" />
+        <TitleSection>
+            <BriefcaseIcon class="size-10" />
             Experiencia Laboral
-        </h2>
+        </TitleSection>
         <Experience />
     </SectionContainer>
 
     <SectionContainer id="projects">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <TitleSection>
             <CodeIcon class="size-12" />
             Proyectos
-        </h2>
+        </TitleSection>
         <Projects />
     </SectionContainer>
 </Layout>
