@@ -27,29 +27,33 @@ import CodeIcon from "../components/icons/Code.astro";
     title="Portfolio | Carlos Salcán - Desarrollador y Programador Web"
     description="Contrata a Carlos Daniel para crear tus aplicaciones web y resolver tus problemas con soluciones digitales únicas, modernas y eficientes ✨🚀."
 >
-    <SectionContainer class="py-20">
-        <Image
-            class="rounded-full size-12 object-cover"
-            src={miFoto}
-            alt="cds photo"
-        />
-
-        <h1
-            class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-        >
-            Hey, soy CarlosDaniel
+    <SectionContainer class="py-25 flex flex-col gap-y-10">
+        <article class="flex items-center gap-x-7 mb-10">
+            <Image
+                class="rounded-full size-16 object-cover shadow-lg"
+                src={miFoto}
+                alt="Foto de Carlos Daniel"
+            />
             <a
                 href="https://www.linkedin.com/in/carlos-salcan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex justify-center items-center"
+                class="flex transition hover:scale-105"
                 ><Badge>Disponible para trabajar</Badge></a
             >
+        </article>
+
+        <h1
+            class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+        >
+            Hey, soy CarlosDaniel
         </h1>
 
-        <h2 class="text-xl lg:text-2xl text-wrap max-w-125">
+        <h2
+            class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+        >
             Ingeniero en Ciencias de la Computación, <span
-                class="text-yellow-400"
+                class="text-yellow-500"
                 >Desarrollador Web & Analista de Datos de Quito</span
             >, Ecuador 🇪🇨. Construyo soluciones digitales funcionales,
             eficientes y estratégicamente diseñadas para optimizar procesos y
@@ -57,17 +61,17 @@ import CodeIcon from "../components/icons/Code.astro";
         </h2>
 
         <nav class="flex gap-4 mt-8 flex-wrap">
+            <SocialPill href="https://github.com/carlodaniel-dev">
+                <GithubIcon class="size-4 md:size-6" />
+                GitHub
+            </SocialPill>
             <SocialPill href="https://www.linkedin.com/in/carlos-salcan/">
                 <LinkedInIcon class="size-4 md:size-6" />
                 LinkedIn
             </SocialPill>
-            <SocialPill href="https://github.com/carlodaniel-dev">
-                <GithubIcon class="size-4 md:size-6" />
-                Git Hub
-            </SocialPill>
-            <SocialPill href="https://github.com/CarlosSalcan">
+            <SocialPill href="mailto:carlosdanielsm.dev@gmail.com">
                 <MailIcon class="size-4 md:size-6" />
-                carlosdanielsm.dev@gmail.com
+                Contactame
             </SocialPill>
         </nav>
     </SectionContainer>

@@ -1,5 +1,13 @@
-<span
-    class="bg-brand-softer text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded dark:bg-blue-900 dark: text-blue-300"
->
-    <slot />
-</span>
+<div class="flex items-center">
+    <span class="relative inline-flex overflow-hidden rounded-full p-px -m-px">
+        <span
+            class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#1a4335_50%,#51E4B8_100%)] z-0"
+        ></span>
+
+        <div
+            class="relative inline-flex items-center justify-center w-full px-3 py-1 text-sm text-white bg-green-100/90 rounded-full dark:bg-slate-950 dark:text-white backdrop-blur-3xl whitespace-nowrap z-10"
+        >
+            <slot />
+        </div>
+    </span>
+</div>
