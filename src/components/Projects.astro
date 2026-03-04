@@ -32,7 +32,7 @@ const PROJECTS = [
             "Landing page diseñada para optimizar la presencia digital del centro de salud mental. Enfocada en la experiencia de usuario, con una arquitectura de información clara para facilitar el contacto de los pacientes.",
         link: "https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
         github: "https://github.com/carlodaniel-dev/centro-perfectaAlegria",
-        image: "projects/perfectAlegria.webp",
+        image: "/projects/perfectAlegria.webp",
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
 ];
@@ -43,11 +43,10 @@ const PROJECTS = [
         PROJECTS.map(({ image, title, description, tags, link, github }) => (
             <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
                 <div class="w-full md:w-1/2">
-                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
                         <img
                             alt={`Captura de pantalla del proyecto ${title}`}
                             class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                            style="backface-visibility: hidden; transform: translateZ(0);"
                             loading="lazy"
                             src={image}
                         />
@@ -63,7 +62,7 @@ const PROJECTS = [
                             {tags.map((tag) => (
                                 <li>
                                     <span
-                                        class={`flex items-center gap-x-2 rounded-full text-xs font-semibold ${tag.color} py-1 px-3 shadow-sm transition-all hover:scale-105`}
+                                        class={`flex gap-x-2 rounded-full text-xs ${tag.color} py-1 px-2 `}
                                     >
                                         <tag.icon class="size-4" />
                                         {tag.name}
@@ -71,9 +70,11 @@ const PROJECTS = [
                                 </li>
                             ))}
                         </ul>
+
                         <div class="mt-2 text-gray-700 dark:text-gray-400">
                             {description}
                         </div>
+
                         <footer class="flex items-end justify-start mt-4 gap-x-4">
                             {github && (
                                 <ButtonUi href={github}>

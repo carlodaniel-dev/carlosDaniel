@@ -9,9 +9,11 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 import BriefcaseIcon from "../components/icons/Briefcase.astro";
 import CodeIcon from "../components/icons/Code.astro";
+import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -21,6 +23,7 @@ import CodeIcon from "../components/icons/Code.astro";
     title="Portfolio | Carlos Salcán - Desarrollador y Programador Web"
     description="Contrata a Carlos Daniel para crear tus aplicaciones web y resolver tus problemas con soluciones digitales únicas, modernas y eficientes ✨🚀."
 >
+<div class="space-y-24">
     <SectionContainer class="py-16 md:py-20">
         <Hero />
     </SectionContainer>
@@ -40,4 +43,14 @@ import CodeIcon from "../components/icons/Code.astro";
         </TitleSection>
         <Projects />
     </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+        <TitleSection>
+            <ProfileCheckIcon class="size-8" />
+            Sobre mí
+        </TitleSection>
+        <AboutMe />
+    </SectionContainer>
+</div>
+    
 </Layout>
