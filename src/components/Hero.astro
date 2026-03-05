@@ -11,49 +11,50 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/GitHub.astro";
 import MailIcon from "../components/icons/Mail.astro";
 ---
-<div class="flex items-center gap-x-7 mb-10">
-            <Image
-                class="rounded-full shadow-lg size-16 md:size-18"
-                src={miFoto}
-                alt="Foto de Carlos Daniel"
-            />
-            <a
-                href="https://www.linkedin.com/in/carlos-salcan/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex transition hover:scale-105"
-                ><Badge>Disponible para trabajar</Badge></a
-            >
-        </div>
 
-        <h1
-            class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+<div class="max-w-2xl pt-24">
+    <div class="flex items-center gap-x-7 mb-10">
+        <Image
+            class="rounded-full shadow-lg size-16 md:size-18"
+            src={miFoto}
+            alt="Foto de Carlos Daniel"
+        />
+        <a
+            href="https://www.linkedin.com/in/carlos-salcan/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex transition hover:scale-105"
+            ><Badge>Disponible para trabajar</Badge></a
         >
-            Hey, soy CarlosDaniel
-        </h1>
+    </div>
 
-        <p
-            class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-        >
-            Ingeniero en Ciencias de la Computación, <strong
-                class="text-yellow-500"
-                >Desarrollador Web & Analista de Datos de Quito</strong
-            >, Ecuador 🇪🇨. Construyo soluciones digitales funcionales,
-            eficientes y estratégicamente diseñadas para optimizar procesos y
-            generar impacto.
-        </p>
+    <h1
+        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    >
+        Hey, soy CarlosDaniel
+    </h1>
 
-        <nav class="flex gap-4 mt-8 flex-wrap">
-            <SocialPill href="https://github.com/carlodaniel-dev">
-                <GithubIcon class="size-4 md:size-6" />
-                GitHub
-            </SocialPill>
-            <SocialPill href="https://www.linkedin.com/in/carlos-salcan/">
-                <LinkedInIcon class="size-4 md:size-6" />
-                LinkedIn
-            </SocialPill>
-            <SocialPill href="mailto:carlosdanielsm.dev@gmail.com">
-                <MailIcon class="size-4 md:size-6" />
-                Contactame
-            </SocialPill>
-        </nav>
+    <p
+        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+        Ingeniero en Ciencias de la Computación, <strong class="text-yellow-500"
+            >Desarrollador Web & Analista de Datos de Quito</strong
+        >, Ecuador 🇪🇨. Construyo soluciones digitales funcionales, eficientes y
+        estratégicamente diseñadas para optimizar procesos y generar impacto.
+    </p>
+
+    <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://github.com/carlodaniel-dev">
+            <GithubIcon class="size-4 md:size-6" />
+            GitHub
+        </SocialPill>
+        <SocialPill href="https://www.linkedin.com/in/carlos-salcan/">
+            <LinkedInIcon class="size-4 md:size-6" />
+            LinkedIn
+        </SocialPill>
+        <SocialPill href="mailto:carlosdanielsm.dev@gmail.com">
+            <MailIcon class="size-4 md:size-6" />
+            Contactame
+        </SocialPill>
+    </nav>
+</div>
