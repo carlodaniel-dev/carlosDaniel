@@ -7,6 +7,9 @@ import ButtonUi from "./ui/Button.astro";
 import LinkIcon from "./icons/Link.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 
+import { Image } from "astro:assets";
+import imgProyect from "../assets/img/projects/perfectAlegria.webp";
+
 const TAGS = {
     HTML: {
         name: "HTML",
@@ -32,7 +35,7 @@ const PROJECTS = [
             "Landing page diseñada para optimizar la presencia digital del centro de salud mental. Enfocada en la experiencia de usuario, con una arquitectura de información clara para facilitar el contacto de los pacientes.",
         link: "https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
         github: "https://github.com/carlodaniel-dev/centro-perfectaAlegria",
-        image: "/projects/perfectAlegria.webp",
+        image: imgProyect,
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
     },
 ];
@@ -44,11 +47,11 @@ const PROJECTS = [
             <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
                 <div class="w-full md:w-1/2">
                     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                        <img
+                        <Image
+                            src={image}
                             alt={`Captura de pantalla del proyecto ${title}`}
                             class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
                             loading="lazy"
-                            src={image}
                         />
                     </div>
                 </div>
