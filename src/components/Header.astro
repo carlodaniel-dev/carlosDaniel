@@ -1,24 +1,46 @@
-<header
-	class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-	<nav
-		class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl"
+<header class="fixed top-0 z-50 w-full flex justify-center">
+	<div
+		class="relative flex items-center justify-center bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl px-10 py-3 rounded-b-3xl border-x border-b border-white/10 shadow-2xl"
 	>
-		<div class="flex flex-row gap-x-10 opacity-80 py-2 px-5">
-			<a class="hover:text-yellow-500 transition" href="#top">Inicio</a>
-			<a class="hover:text-yellow-500 transition" href="#experiencie"
-				>Experiencia</a
-			>
-			<a class="hover:text-yellow-500 transition" href="#projects"
-				>Proyectos</a
-			>
-			<a class="hover:text-yellow-500 transition" href="#about"
-				>Sobre Mí</a
+		<div
+			class="absolute -left-40px top-0 size-40px bg-transparent
+            shadow-[20px_-20px_0_0_rgba(255,255,255,0.5)]
+            dark:shadow-[20px_-20px_0_0_rgba(31,41,55,0.5)]
+            rounded-tr-[40px] pointer-events-none"
+		>
+		</div>
+
+		<nav
+			class="flex flex-row gap-x-12 text-base font-semibold text-gray-700 dark:text-gray-100"
+		>
+			<a
+				class="hover:text-yellow-500 transition-all hover:scale-110"
+				href="#top">Inicio</a
 			>
 			<a
-				class="hover:text-yellow-500 transition"
-				href="mailto:tu-correo@gmail.com">Contacto</a
+				class="hover:text-yellow-500 transition-all hover:scale-110"
+				href="#experiencie">Experiencia</a
 			>
+			<a
+				class="hover:text-yellow-500 transition-all hover:scale-110"
+				href="#projects">Proyectos</a
+			>
+			<a
+				class="hover:text-yellow-500 transition-all hover:scale-110"
+				href="#about">Sobre Mí</a
+			>
+			<a
+				class="hover:text-yellow-500 transition-all hover:scale-110"
+				href="mailto:carlosdanielsm.dev@gmail.com">Contacto</a
+			>
+		</nav>
+
+		<div
+			class="absolute -right-40px top-0 size-40px bg-transparent
+            shadow-[-20px_-20px_0_0_rgba(255,255,255,0.5)]
+            dark:shadow-[-20px_-20px_0_0_rgba(31,41,55,0.5)]
+            rounded-tl-[40px] pointer-events-none"
+		>
 		</div>
-	</nav>
+	</div>
 </header>
