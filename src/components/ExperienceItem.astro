@@ -43,10 +43,13 @@ const { title, date, description, link } = Astro.props;
     </p>
 
     <!-- Renderizado condicional del botón "Saber Más" si el enlace está presente -->
+    <!-- Cambio Dinamico en el enlace -->
     {
         link && (
             <a
-                href="#"
+                href={link}
+                target="_blank" 
+                rel="noopener noreferrer"
                 class="inline-flex items-center text-body bg-neutral-secondary-medium box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             >
                 <svg
