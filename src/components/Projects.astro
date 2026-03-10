@@ -30,7 +30,7 @@ const TAGS = {
 
 const PROJECTS = [
     {
-        title: "Centro Perfecta Alegría - Desarrollo Psicoemocional Integral",
+        title: "Centro La Perfecta Alegría",
         description:
             "Landing page diseñada para optimizar la presencia digital del centro de salud mental. Enfocada en la experiencia de usuario, con una arquitectura de información clara para facilitar el contacto de los pacientes.",
         link: "https://carlodaniel-dev.github.io/centro-perfectaAlegria/",
@@ -41,7 +41,7 @@ const PROJECTS = [
 ];
 ---
 
-<div class="max-w-5xl flex flex-col gap-y-16">
+<div class="w-full flex flex-col gap-y-16">
     {
         PROJECTS.map(({ image, title, description, tags, link, github }) => (
             <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
@@ -74,7 +74,7 @@ const PROJECTS = [
                             ))}
                         </ul>
 
-                        <div class="max-w-sm mt-2 text-gray-700 dark:text-gray-400">
+                        <div class="w-full mt-2 text-gray-700 dark:text-gray-400">
                             {description}
                         </div>
 

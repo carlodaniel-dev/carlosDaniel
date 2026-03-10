@@ -15,18 +15,18 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative text-white text-justify">
+	<body class="relative text-white">
 		<div
 			class="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
 		>
 		</div>
 		<Header />
-		<main class="max-w-280 mx-auto px-4">
+		<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 			<slot />
 		</main>
 		<Footer />
