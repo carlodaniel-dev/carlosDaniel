@@ -1,4 +1,5 @@
 ---
+import AstroIcon from "./icons/AstroIcon.astro";
 import Html from "./icons/Html.astro";
 import Css from "./icons/Css.astro";
 import Js from "./icons/Js.astro";
@@ -8,9 +9,15 @@ import LinkIcon from "./icons/Link.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 
 import { Image } from "astro:assets";
-import imgProyect from "../assets/img/projects/perfectAlegria.webp";
+import imgProyect from "./public/img/projects/perfectAlegria.webp";
+import imgOdonto from "./public/img/projects/odontologia.webp";
 
 const TAGS = {
+    AstroIcon: {
+        name: "Astro",
+        color: "bg-[#ff5f5f]/10 text-[#ff5f5f] border border-[#ff5f5f]/20",
+        icon: AstroIcon,
+    },
     HTML: {
         name: "HTML",
         color: "bg-[#e34f26]/10 text-[#ff6d45] border border-[#e34f26]/20",
@@ -37,6 +44,15 @@ const PROJECTS = [
         github: "https://github.com/carlodaniel-dev/centro-perfectaAlegria",
         image: imgProyect,
         tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+    },
+    {
+        title: "Dental Education Site",
+        description:
+            "Landing page diseñada para optimizar la presencia digital del sector odontológico. Enfocada en la experiencia de usuario, con una arquitectura de información clara para facilitar el acceso a recursos educativos y el contacto de los pacientes.",
+        link: "https://carlodaniel-dev.github.io/dental-education-site/recursos/",
+        github: "https://github.com/carlodaniel-dev/dental-education-site",
+        image: imgOdonto,
+        tags: [TAGS.AstroIcon],
     },
 ];
 ---
