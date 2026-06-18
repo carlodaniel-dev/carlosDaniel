@@ -1,7 +1,7 @@
 ---
 // Componente optimizador de Astro - Importar la imagen
 import { Image } from "astro:assets";
-import miFoto from "../assets/img/carlosDaniel.webp";
+import miFoto from "../assets/img/cdPerfil.webp";
 
 import Badge from "../components/Badge.astro";
 
@@ -15,9 +15,12 @@ import MailIcon from "../components/icons/Mail.astro";
 <div class="w-full max-w-2xl px-0 pt-24 md:pt-32">
     <div class="flex flex-row items-center gap-x-4 md:gap-x-7 mb-10">
         <Image
-            class="rounded-full shadow-lg size-16 md:size-20"
+            class="rounded-full shadow-lg size-16 md:size-20 object-cover"
             src={miFoto}
             alt="Foto de Carlos Daniel"
+            width={160}
+            height={160}
+            densities={[1, 1.5, 2]}
         />
         <a
             href="https://www.linkedin.com/in/carlos-salcan/"
