@@ -3,6 +3,8 @@ import AstroIcon from "./icons/AstroIcon.astro";
 import Html from "./icons/Html.astro";
 import Css from "./icons/Css.astro";
 import Js from "./icons/Js.astro";
+import Next from "./icons/Next.astro";
+import OpenIA from "./icons/OpenIA.astro";
 
 import ButtonUi from "./ui/Button.astro";
 import LinkIcon from "./icons/Link.astro";
@@ -11,6 +13,7 @@ import GitHubIcon from "./icons/GitHub.astro";
 import { Image } from "astro:assets";
 import imgProyect from "../assets/img/projects/perfectAlegria.webp";
 import imgOdonto from "../assets/img/projects/odontologia.webp";
+import productMatch from "../assets/img/projects/product.webp";
 
 const TAGS = {
     AstroIcon: {
@@ -33,6 +36,17 @@ const TAGS = {
         color: "bg-[#f7df1e]/10 text-[#f7df1e] border border-[#f7df1e]/20",
         icon: Js,
     },
+    Next: {
+        name: "Next.js",
+        color: "bg-white/10 text-gray border border-gray/20",
+        icon: Next,
+    },
+
+    OpenAI: {
+        name: "OpenAI",
+        color: "bg-[#10a37f]/10 text-[#0d8f70] border border-[#10a37f]/20",
+        icon: OpenIA,
+    },
 };
 
 const PROJECTS = [
@@ -53,6 +67,14 @@ const PROJECTS = [
         github: "https://github.com/carlodaniel-dev/dental-education-site",
         image: imgOdonto,
         tags: [TAGS.AstroIcon],
+    },
+    {
+        title: "Automatización de Sourcing con LLMs",
+        description:
+            "Automatización de sourcing con IA: de un Excel de productos a una lista rankeada de proveedores equivalentes en minutos, no horas. Construido con control de costos y manejo seguro de credenciales en mente.",
+        github: "https://github.com/carlodaniel-dev/products-match",
+        image: productMatch,
+        tags: [TAGS.Next, TAGS.OpenAI],
     },
 ];
 ---
