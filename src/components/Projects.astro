@@ -5,6 +5,8 @@ import Css from "./icons/Css.astro";
 import Js from "./icons/Js.astro";
 import Next from "./icons/Next.astro";
 import OpenIA from "./icons/OpenIA.astro";
+import Python from "./icons/Python.astro";
+import SqLite from "./icons/SqLite.astro";
 
 import ButtonUi from "./ui/Button.astro";
 import LinkIcon from "./icons/Link.astro";
@@ -13,7 +15,8 @@ import GitHubIcon from "./icons/GitHub.astro";
 import { Image } from "astro:assets";
 import imgProyect from "../assets/img/projects/perfectAlegria.webp";
 import imgOdonto from "../assets/img/projects/odontologia.webp";
-import productMatch from "../assets/img/projects/product.webp";
+import imgProductMatch from "../assets/img/projects/product.webp";
+import imgEnfermeria from "../assets/img/projects/enfermeria.webp";
 
 const TAGS = {
     AstroIcon: {
@@ -41,11 +44,20 @@ const TAGS = {
         color: "bg-white/10 text-gray border border-gray/20",
         icon: Next,
     },
-
     OpenAI: {
         name: "OpenAI",
         color: "bg-[#10a37f]/10 text-[#0d8f70] border border-[#10a37f]/20",
         icon: OpenIA,
+    },
+    Python: {
+        name: "Python",
+        color: "bg-[#3776ab]/10 text-[#4daeff] border border-[#3776ab]/20",
+        icon: Python,
+    },
+    SqLite: {
+        name: "SQLite",
+        color: "bg-red/10 text-[#40A8E0] border border-[#0F80CC]/20",
+        icon: SqLite,
     },
 };
 
@@ -73,8 +85,16 @@ const PROJECTS = [
         description:
             "Automatización de sourcing con IA: de un Excel de productos a una lista rankeada de proveedores equivalentes en minutos, no horas. Construido con control de costos y manejo seguro de credenciales en mente.",
         github: "https://github.com/carlodaniel-dev/products-match",
-        image: productMatch,
+        image: imgProductMatch,
         tags: [TAGS.Next, TAGS.OpenAI],
+    },
+    {
+        title: "Sistema de Enfermería Escolar — AMMI",
+        description:
+            "Sistema de gestión de enfermería escolar desarrollado en Python para digitalizar y optimizar el registro de atenciones. Incorpora alertas automáticas, reportes estadísticos y sincronización entre equipos, mejorando la trazabilidad y reduciendo la dependencia de procesos manuales.",
+        github: "https://github.com/carlodaniel-dev/office-nurse",
+        image: imgEnfermeria,
+        tags: [TAGS.Python, TAGS.SqLite],
     },
 ];
 ---
