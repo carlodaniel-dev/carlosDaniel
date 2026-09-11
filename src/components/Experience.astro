@@ -1,44 +1,67 @@
 ---
-import type { date } from "astro:schema";
 import ExperienceItem from "./ExperienceItem.astro";
 
 const EXPERIENCE = [
     {
-        date: "Julio 2025 - Actualidad...",
-        title: "Freelancer － Desarrollo Web, Diseño UI/UX & Consultoría Técnica",
+        number: "01",
+        date: "Marzo 2026 — Agosto 2026",
+        title: "Soporte Técnico & Desarrollo de Sistemas",
+        company: "Cámara de Comercio Shangai China, Ecuador",
         description:
-            "Ofrezco servicios de desarrollo web, diseño de interfaces y consultoría técnica a emprendedores, pequeñas empresas y organizaciones que buscan mejorar su presencia digital. Me enfoco en construir soluciones a medida, funcionales y modernas, adaptadas a las necesidades reales de cada cliente. Actualmente en búsqueda activa de nuevas oportunidades y proyectos de colaboración.",
+            "Brindé soporte técnico institucional y desarrollé sistemas internos para automatizar procesos de distintas áreas. Implementé flujos en Salesforce y optimicé Kommo CRM para centralizar el seguimiento de clientes y mejorar la trazabilidad comercial.",
+    },
+    {
+        number: "02",
+        date: "Julio 2025 — Actualidad",
+        title: "Freelancer",
+        company: "Desarrollo Web · UI/UX · Consultoría Técnica",
+        description:
+            "Desarrollo soluciones digitales a medida para emprendedores, pequeñas empresas y organizaciones. Combino desarrollo web, diseño de interfaces y consultoría técnica para convertir necesidades reales en soluciones funcionales y modernas.",
         link: "mailto:carlosdanielsm.dev@gmail.com",
     },
     {
-        date: "Marzo 2026 - Agosto 2026",
-        title: "Soporte Técnico & Desarrollo de Sistemas － Cámara de Comercio Shangai China, Ecuador",
-        description:
-            "Soporte técnico institucional. Desarrollé sistemas internos que automatizaron el proceso de disitntas areas, estandarizando el proceso para distintas áreas del equipo. Implementé flujos en Salesforce. Administré y optimicé Kommo CRM para centralizar el seguimiento de clientes y mejorar la trazabilidad comercial, con miras a replicarlo en Odoo. Brindé soporte técnico continuo atendiendo incidencias y requerimientos tecnológicos de la institución.",
-    },
-    {
+        number: "03",
         date: "Julio 2024",
-        title: "Desarrollador Web & Sistemas － Coordinación Zonal 9 de Salud",
+        title: "Desarrollador Web & Sistemas",
+        company: "Coordinación Zonal 9 de Salud",
         description:
-            "Responsable del diseño, desarrollo y mantenimiento de sistemas internos. Lider en reingeniería y optimización del sistema de inventario tecnológico institucional. Identificando fallos en la arquitectura anterior y desarrollo una solución que eliminó errores de registro, garantizando la integridad de los datos y mejorando significativamente la eficiencia en la gestión de recursos.",
-        link: "https://github.com/carlodaniel-dev/It-inventorySystem", // Si existe una demo o enlace relevante, se puede agregar aquí
+            "Lideré la reingeniería y optimización del sistema de inventario tecnológico institucional. Identifiqué problemas en la arquitectura anterior y desarrollé una solución que eliminó errores de registro, mejoró la integridad de los datos y optimizó la gestión de recursos.",
+        link: "https://github.com/carlodaniel-dev/It-inventorySystem",
     },
     {
+        number: "04",
         date: "Febrero 2024",
-        title: "Desarrollador Web － Centro La Perfecta Alegria",
+        title: "Desarrollador Web",
+        company: "Centro La Perfecta Alegría",
         description:
-            "Diseño y desarrollo de interfaces responsive y accesibles. Optimización de presencia digital mediante estrategias técnicas y creativas, mejorando la experiencia de usuario y el posicionamiento de la organización.",
+            "Diseñé y desarrollé interfaces web responsive y accesibles, mejorando la presencia digital de la organización mediante soluciones orientadas a la experiencia de usuario y al posicionamiento digital.",
     },
 ];
 ---
 
-<!-- Marzo 2024 | Noviembre 2023  -->
-<ol class="max-w-4xl relative border-s border-default ml-3">
-    {
-        EXPERIENCE.map((experience) => (
-            <li class="mb-10 ms-6">
-                <ExperienceItem {...experience} />
-            </li>
-        ))
-    }
-</ol>
+<section class="w-full">
+    <div class="mb-10">
+        <span
+            class="font-mono text-xs uppercase tracking-[0.2em] text-[#FFD166]"
+        >
+            Experiencia
+        </span>
+
+        <h2
+            class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+        >
+            Lo que he construido
+        </h2>
+
+        <p
+            class="mt-4 max-w-xl text-sm leading-relaxed text-[#C9C3D8] sm:text-base"
+        >
+            Una trayectoria enfocada en desarrollo de software, automatización
+            de procesos y resolución de problemas tecnológicos.
+        </p>
+    </div>
+
+    <ol class="border-t border-white/10">
+        {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+    </ol>
+</section>
