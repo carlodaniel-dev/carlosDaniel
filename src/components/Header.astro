@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import miFoto from "../assets/img/cdPerfil.webp";
+---
+
 <header class="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4">
     <div
         class="flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-[#160D2B]/70 px-5 py-3 backdrop-blur-xl"
@@ -5,9 +10,27 @@
         <!-- Logo / identidad -->
         <a
             href="#top"
-            class="shrink-0 text-sm font-semibold tracking-tight text-white transition-colors hover:text-[#FFD166]"
+            class="group flex items-center gap-2.5"
+            aria-label="Inicio"
         >
-            CD / DEV
+            <span
+                id="nav-avatar"
+                class="size-7 overflow-hidden rounded-full opacity-0 scale-75 -translate-x-2 transition-all duration-500"
+            >
+                <Image
+                    src={miFoto}
+                    alt=""
+                    width={56}
+                    height={56}
+                    class="size-full object-cover"
+                />
+            </span>
+
+            <span
+                class="shrink-0 text-sm font-semibold tracking-tight text-white transition-colors group-hover:text-[#FFD166]"
+            >
+                CD / DEV
+            </span>
         </a>
 
         <!-- Navegación -->
@@ -42,3 +65,37 @@
         </a>
     </div>
 </header>
+
+<script>
+    const navAvatar = document.querySelector("#nav-avatar");
+
+    const handleScroll = () => {
+        if (!navAvatar) return;
+
+        if (window.scrollY > 80) {
+            navAvatar.classList.remove(
+                "opacity-0",
+                "scale-75",
+                "-translate-x-2",
+            );
+
+            navAvatar.classList.add(
+                "opacity-100",
+                "scale-100",
+                "translate-x-0",
+            );
+        } else {
+            navAvatar.classList.remove(
+                "opacity-100",
+                "scale-100",
+                "translate-x-0",
+            );
+
+            navAvatar.classList.add("opacity-0", "scale-75", "-translate-x-2");
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    handleScroll();
+</script>

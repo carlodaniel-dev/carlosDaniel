@@ -9,7 +9,7 @@ import MailIcon from "../components/icons/Mail.astro";
 
 <section
     id="top"
-    class="flex min-h-[calc(100vh-5rem)] w-full items-center pt-24 pb-16 md:pt-28"
+    class="flex min-h-[calc(100vh-5rem)] w-full items-center md:pt-28"
 >
     <div
         class="grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16"
@@ -96,7 +96,8 @@ import MailIcon from "../components/icons/Mail.astro";
                 </div>
 
                 <Image
-                    class="relative size-32 rounded-full object-cover ring-1 ring-white/10 sm:size-40 md:size-52"
+                    id="hero-avatar"
+                    class="relative size-32 rounded-full object-cover ring-1 ring-white/10 transition-all duration-500 sm:size-40 md:size-52"
                     src={miFoto}
                     alt="Foto de Carlos Daniel"
                     width={416}
@@ -107,3 +108,25 @@ import MailIcon from "../components/icons/Mail.astro";
         </div>
     </div>
 </section>
+
+<script>
+    const heroAvatar = document.querySelector("#hero-avatar");
+
+    const handleScroll = () => {
+        if (!heroAvatar) return;
+
+        if (window.scrollY > 80) {
+            heroAvatar.classList.add("opacity-0", "scale-90", "-translate-y-3");
+        } else {
+            heroAvatar.classList.remove(
+                "opacity-0",
+                "scale-90",
+                "-translate-y-3",
+            );
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    handleScroll();
+</script>

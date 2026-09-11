@@ -13,8 +13,10 @@ const { number, title, company, date, description, link } = Astro.props;
 const isEmail = link?.startsWith("mailto:");
 ---
 
-<li class="group border-b border-white/10 py-7 sm:py-8">
-    <div class="grid gap-5 md:grid-cols-[3rem_1fr_auto] md:gap-6">
+<li
+    class="group border-b border-white/10 py-8 transition-colors duration-300 hover:border-white/20 sm:py-10"
+>
+    <div class="grid gap-5 md:grid-cols-[3rem_1fr_auto] md:gap-8">
         <!-- Número -->
         <span
             class="font-mono text-xs tracking-wider text-[#FFD166]"
@@ -29,7 +31,7 @@ const isEmail = link?.startsWith("mailto:");
                 class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3"
             >
                 <h3
-                    class="text-lg font-semibold tracking-tight text-white transition-colors group-hover:text-[#FFD166] sm:text-xl"
+                    class="text-xl font-semibold tracking-tight text-white transition-colors group-hover:text-[#FFD166] sm:text-2xl"
                 >
                     {title}
                 </h3>
