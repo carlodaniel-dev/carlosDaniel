@@ -5,7 +5,7 @@ import miFoto from "../assets/img/cdPerfil.webp";
 
 <header class="fixed inset-x-0 top-0 z-50 flex justify-center px-4 py-4">
     <div
-        class="flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-[#160D2B]/70 px-5 py-3 backdrop-blur-xl"
+        class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-[#160D2B]/70 px-5 py-3 backdrop-blur-xl"
     >
         <!-- Logo / identidad -->
         <a
@@ -33,7 +33,7 @@ import miFoto from "../assets/img/cdPerfil.webp";
             </span>
         </a>
 
-        <!-- Navegación -->
+        <!-- Navegación desktop -->
         <nav
             class="hidden items-center gap-7 text-sm font-medium text-[#C9C3D8] md:flex"
             aria-label="Navegación principal"
@@ -51,23 +51,92 @@ import miFoto from "../assets/img/cdPerfil.webp";
             </a>
         </nav>
 
-        <!-- CTA -->
-        <a
-            href="mailto:carlosdanielsm.dev@gmail.com"
-            class="group inline-flex items-center gap-1.5 rounded-full bg-[#FFD166] px-4 py-2 text-sm font-semibold text-[#160D2B] transition-transform hover:scale-105"
-        >
-            Hablemos
-            <span
-                class="transition-transform duration-200 group-hover:translate-x-0.5"
+        <!-- Acciones -->
+        <div class="flex items-center gap-2">
+            <!-- CTA -->
+            <a
+                href="mailto:carlosdanielsm.dev@gmail.com"
+                class="group inline-flex items-center gap-1.5 rounded-full bg-[#FFD166] px-4 py-2 text-sm font-semibold text-[#160D2B] transition-transform hover:scale-105"
             >
-                →
-            </span>
-        </a>
+                Hablemos
+                <span
+                    class="transition-transform duration-200 group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                >
+                    →
+                </span>
+            </a>
+
+            <!-- Botón menú móvil -->
+            <button
+                id="mobile-menu-button"
+                type="button"
+                class="flex size-9 items-center justify-center rounded-full border border-white/10 text-[#C9C3D8] transition-colors hover:border-white/20 hover:bg-white/5 hover:text-white md:hidden"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span id="menu-icon" aria-hidden="true">☰</span>
+            </button>
+        </div>
+
+        <!-- Menú móvil -->
+        <nav
+            id="mobile-menu"
+            class="pointer-events-none absolute left-0 right-0 top-[calc(100%+0.5rem)] translate-y-2 rounded-2xl border border-white/10 bg-[#160D2B]/95 p-3 opacity-0 backdrop-blur-xl transition-all duration-200 md:hidden"
+            aria-label="Navegación móvil"
+        >
+            <div class="flex flex-col">
+                <a
+                    href="#experience"
+                    class="mobile-menu-link flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#C9C3D8] transition-colors hover:bg-white/5 hover:text-white"
+                >
+                    <span>Experiencia</span>
+                    <span
+                        class="font-mono text-xs text-[#FFD166]"
+                        aria-hidden="true"
+                    >
+                        01
+                    </span>
+                </a>
+
+                <a
+                    href="#projects"
+                    class="mobile-menu-link flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#C9C3D8] transition-colors hover:bg-white/5 hover:text-white"
+                >
+                    <span>Proyectos</span>
+                    <span
+                        class="font-mono text-xs text-[#FFD166]"
+                        aria-hidden="true"
+                    >
+                        02
+                    </span>
+                </a>
+
+                <a
+                    href="#about"
+                    class="mobile-menu-link flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#C9C3D8] transition-colors hover:bg-white/5 hover:text-white"
+                >
+                    <span>Sobre mí</span>
+                    <span
+                        class="font-mono text-xs text-[#FFD166]"
+                        aria-hidden="true"
+                    >
+                        03
+                    </span>
+                </a>
+            </div>
+        </nav>
     </div>
 </header>
 
 <script>
     const navAvatar = document.querySelector("#nav-avatar");
+    const menuButton = document.querySelector("#mobile-menu-button");
+    const mobileMenu = document.querySelector("#mobile-menu");
+    const menuIcon = document.querySelector("#menu-icon");
+    const mobileMenuLinks =
+        document.querySelectorAll(".mobile-menu-link");
 
     const handleScroll = () => {
         if (!navAvatar) return;
@@ -91,11 +160,99 @@ import miFoto from "../assets/img/cdPerfil.webp";
                 "translate-x-0",
             );
 
-            navAvatar.classList.add("opacity-0", "scale-75", "-translate-x-2");
+            navAvatar.classList.add(
+                "opacity-0",
+                "scale-75",
+                "-translate-x-2",
+            );
         }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const toggleMobileMenu = () => {
+        if (
+            !(menuButton instanceof HTMLButtonElement) ||
+            !(mobileMenu instanceof HTMLElement) ||
+            !(menuIcon instanceof HTMLElement)
+        ) {
+            return;
+        }
+
+        const isOpen =
+            menuButton.getAttribute("aria-expanded") === "true";
+
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Abrir menú" : "Cerrar menú",
+        );
+
+        if (isOpen) {
+            mobileMenu.classList.remove(
+                "pointer-events-auto",
+                "translate-y-0",
+                "opacity-100",
+            );
+
+            mobileMenu.classList.add(
+                "pointer-events-none",
+                "translate-y-2",
+                "opacity-0",
+            );
+
+            menuIcon.textContent = "☰";
+        } else {
+            mobileMenu.classList.remove(
+                "pointer-events-none",
+                "translate-y-2",
+                "opacity-0",
+            );
+
+            mobileMenu.classList.add(
+                "pointer-events-auto",
+                "translate-y-0",
+                "opacity-100",
+            );
+
+            menuIcon.textContent = "×";
+        }
+    };
+
+    const closeMobileMenu = () => {
+        if (
+            !(menuButton instanceof HTMLButtonElement) ||
+            !(mobileMenu instanceof HTMLElement) ||
+            !(menuIcon instanceof HTMLElement)
+        ) {
+            return;
+        }
+
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menú");
+
+        mobileMenu.classList.remove(
+            "pointer-events-auto",
+            "translate-y-0",
+            "opacity-100",
+        );
+
+        mobileMenu.classList.add(
+            "pointer-events-none",
+            "translate-y-2",
+            "opacity-0",
+        );
+
+        menuIcon.textContent = "☰";
+    };
+
+    menuButton?.addEventListener("click", toggleMobileMenu);
+
+    mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("scroll", handleScroll, {
+        passive: true,
+    });
 
     handleScroll();
 </script>
