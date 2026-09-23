@@ -4,12 +4,9 @@ import miFoto from "../assets/img/cdPerfil.webp";
 
 import GithubIcon from "../components/icons/GitHub.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import MailIcon from "../components/icons/Mail.astro";
 ---
 
-<section
-    class="flex min-h-[calc(100vh-5rem)] w-full items-center md:pt-28"
->
+<section class="flex min-h-[calc(100vh-5rem)] w-full items-center md:pt-28">
     <div
         class="grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16"
     >
@@ -49,6 +46,19 @@ import MailIcon from "../components/icons/Mail.astro";
                 optimizan operaciones y convierten necesidades reales en
                 soluciones funcionales.
             </p>
+
+            <a
+                href="/blog"
+                class="group mt-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-white transition-colors hover:text-[#FFD166]"
+            >
+                Conoce más en mi blog (Proximamente)
+                <span
+                    class="transition-transform duration-200 group-hover:translate-x-1"
+                    aria-hidden="true"
+                >
+                    →
+                </span>
+            </a>
 
             <!-- Acciones -->
             <div class="mt-9 flex flex-wrap items-center gap-3">
