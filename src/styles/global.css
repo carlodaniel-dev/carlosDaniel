@@ -1,24 +1,76 @@
 @import "tailwindcss";
 
 :root {
-    color-scheme: light dark;
+    color-scheme: dark;
+
+    --color-bg: #160d2b;
+    --color-bg-secondary: #24103f;
+    --color-bg-accent: #32145f;
+
+    --color-text: #ffffff;
+    --color-text-secondary: #c9c3d8;
+
+    --color-accent: #ffd166;
 }
 
 html {
-    font-family: system-ui, sans-serif;
     scroll-behavior: smooth;
+    font-family: "Geist", system-ui, sans-serif;
+    background: var(--color-bg);
 }
 
 body {
-    background: #050505;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+
+    color: var(--color-text);
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(80, 35, 130, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            var(--color-bg) 0%,
+            var(--color-bg-secondary) 50%,
+            var(--color-bg-accent) 100%
+        );
+
+    background-attachment: fixed;
+
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: #160d2b;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

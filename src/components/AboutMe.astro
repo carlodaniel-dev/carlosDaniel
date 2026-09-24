@@ -1,51 +1,114 @@
 ---
-const personalImageAlt = "Carlos Daniel Salcán";
-
 import { Image } from "astro:assets";
 import miFoto from "../assets/img/CarloDanie.webp";
 ---
 
-<article
-    class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
->
-    <div
-        class="text-base md:text-lg [&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
-    >
-        <p>
-            Me llamo Carlos Daniel. Mi fascinación por la tecnología comenzó
-            desarmando y volviendo a ensamblar computadoras para entender cómo
-            funcionaban por dentro. Esa curiosidad natural me llevó a
-            convertirme en <strong
-                >Ingeniero en Ciencias de la Computación</strong
-            >.
-        </p>
+<section class="w-full">
+    <!-- Encabezado de sección -->
+    <div class="border-b border-white/10 pb-10">
+        <span
+            class="font-mono text-xs uppercase tracking-[0.2em] text-[#FFD166]"
+        >
+            03 — Sobre mí
+        </span>
 
-        <p>
-            En mi trayectoria, he aprendido que el éxito de un sistema no solo
-            reside en el código, sino en una <strong
-                >metodología de análisis, planeación y ejecución</strong
-            >. Gracias a este enfoque, he logrado impulsar sistemas , eliminando
-            errores en ejecución garantizando la integridad de la información en
-            diversos entornos.
-        </p>
-
-        <p>
-            Fuera del entorno de desarrollo, <strong
-                >disfruto de un buen café, diversos deportes y sumergirme en el
-                mundo de los <em class="italic">Videojuegos & Series</em
-                ></strong
-            >. Mi objetivo es mantener una mente activa y equilibrada que me
-            permita abordar cada desafío técnico con una perspectiva fresca,
-            eficiente y estratégica.
-        </p>
+        <h2
+            class="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl"
+        >
+            Código, curiosidad y aprendizaje constante.
+        </h2>
     </div>
 
-    <Image
-        src={miFoto}
-        alt={personalImageAlt}
-        width="200"
-        height="200"
-        class="order-1 object-cover w-40 sm:w-52 md:w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
-        style="object-position: 50% 50%"
-    />
-</article>
+    <!-- Contenido -->
+    <div
+        class="grid items-center gap-12 py-12 md:grid-cols-[1.3fr_0.7fr] md:gap-16 md:py-16"
+    >
+        <!-- Texto -->
+        <div>
+            <div
+                class="max-w-2xl space-y-5 text-base leading-relaxed text-[#C9C3D8] sm:text-lg"
+            >
+                <p>
+                    Me llamo
+                    <strong class="font-medium text-white">
+                        Carlos Daniel
+                    </strong>.
+                    Mi fascinación por la tecnología comenzó desarmando y
+                    volviendo a ensamblar computadoras para entender cómo
+                    funcionaban por dentro. Esa curiosidad me llevó a
+                    convertirme en
+                    <strong class="font-medium text-white">
+                        Ingeniero en Ciencias de la Computación
+                    </strong>.
+                </p>
+
+                <p>
+                    Con el tiempo entendí que desarrollar software va mucho
+                    más allá de escribir código. Analizar el problema,
+                    planificar una solución y entender cómo funcionará en un
+                    entorno real son parte fundamental del proceso.
+                </p>
+
+                <p>
+                    Actualmente disfruto construir soluciones que
+                    <strong class="font-medium text-white">
+                        automatizan procesos, mejoran operaciones y resuelven
+                        necesidades reales
+                    </strong>.
+                    Me interesa especialmente aprender nuevas tecnologías y
+                    encontrar formas más simples y eficientes de hacer las
+                    cosas.
+                </p>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                <span
+                    class="font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                >
+                    Desarrollo de software
+                </span>
+
+                <span class="text-white/20">/</span>
+
+                <span
+                    class="font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                >
+                    Automatización
+                </span>
+
+                <span class="text-white/20">/</span>
+
+                <span
+                    class="font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                >
+                    Tecnología
+                </span>
+            </div>
+        </div>
+
+        <!-- Fotografía -->
+        <div class="flex justify-center md:justify-end">
+            <div class="relative">
+                <div
+                    class="absolute -inset-3 rounded-2xl border border-white/10"
+                    aria-hidden="true"
+                ></div>
+
+                <Image
+                    src={miFoto}
+                    alt="Carlos Daniel Salcán"
+                    width={416}
+                    height={416}
+                    densities={[1, 1.5, 2]}
+                    class="relative aspect-square w-56 rounded-2xl object-cover ring-1 ring-white/10 sm:w-64 md:w-72"
+                />
+
+                <span
+                    class="absolute -bottom-4 -left-4 rounded-full border border-white/10 bg-[#160D2B] px-4 py-2 font-mono text-xs text-[#C9C3D8]"
+                >
+                    Quito · Ecuador
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
