@@ -3,20 +3,13 @@ import "../styles/global.css";
 
 import Layout from "../layouts/Layout.astro";
 
-import TitleSection from "../components/TitleSeccion.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
-
-import BriefcaseIcon from "../components/icons/Briefcase.astro";
-import CodeIcon from "../components/icons/Code.astro";
-import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CTA from "../components/CTA.astro";
 ---
 
 <Layout
@@ -37,11 +30,9 @@ import ProfileCheckIcon from "../components/icons/ProfileCheck.astro";
         </SectionContainer>
 
         <SectionContainer id="about">
-            <TitleSection>
-                <ProfileCheckIcon class="size-10" />
-                Sobre mí
-            </TitleSection>
             <AboutMe />
         </SectionContainer>
+
+        <CTA />
     </div>
 </Layout>

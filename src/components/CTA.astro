@@ -1,0 +1,345 @@
+---
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+---
+
+<section class="w-full">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6">
+        <!-- Encabezado -->
+        <div class="border-b border-white/10 pb-10">
+            <span
+                class="font-mono text-xs uppercase tracking-[0.2em] text-[#FFD166]"
+            >
+                04 — Hablemos
+            </span>
+
+            <h2
+                class="mt-3 max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
+            >
+                ¿Tienes una idea o un problema que resolver?
+            </h2>
+        </div>
+
+        <!-- Contenido -->
+        <div class="py-12 md:py-16">
+            <p
+                class="max-w-2xl text-base leading-relaxed text-[#C9C3D8] sm:text-lg"
+            >
+                Cuéntame qué necesitas. Podemos analizar el problema, definir
+                una solución y convertir esa idea en algo funcional.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+                <!-- Correo -->
+                <a
+                    href="mailto:carlosdanielsm.dev@gmail.com"
+                    class="group inline-flex items-center gap-2 rounded-full bg-[#FFD166] px-5 py-3 text-sm font-semibold text-[#160D2B] transition-transform hover:scale-105"
+                >
+                    Hablemos
+                    <span
+                        class="transition-transform duration-200 group-hover:translate-x-1"
+                        aria-hidden="true"
+                    >
+                        →
+                    </span>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/carlos-salcan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-[#C9C3D8] backdrop-blur-sm transition-colors hover:border-white/20 hover:text-white"
+                >
+                    <LinkedInIcon class="size-4" />
+                    LinkedIn
+                </a>
+
+                <!-- WhatsApp -->
+                <button
+                    id="whatsapp-button"
+                    type="button"
+                    class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-[#C9C3D8] transition-colors hover:border-white/20 hover:text-white"
+                >
+                    Hablar por WhatsApp
+                    <span aria-hidden="true">↗</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal WhatsApp -->
+    <div
+        id="whatsapp-modal"
+        class="pointer-events-none fixed inset-0 z-60 flex items-center justify-center bg-black/60 px-4 opacity-0 backdrop-blur-sm transition-opacity duration-200"
+        aria-hidden="true"
+    >
+        <div
+            id="whatsapp-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="whatsapp-title"
+            class="w-full max-w-md translate-y-3 rounded-2xl border border-white/10 bg-[#160D2B] p-6 opacity-0 transition-all duration-200"
+        >
+            <!-- Cabecera -->
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <span
+                        class="font-mono text-[10px] uppercase tracking-[0.2em] text-[#FFD166]"
+                    >
+                        Contacto
+                    </span>
+
+                    <h3
+                        id="whatsapp-title"
+                        class="mt-2 text-2xl font-semibold tracking-tight text-white"
+                    >
+                        Cuéntame sobre tu proyecto
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-relaxed text-[#C9C3D8]">
+                        Completa estos datos y prepararemos tu mensaje para
+                        WhatsApp.
+                    </p>
+                </div>
+
+                <button
+                    id="whatsapp-close"
+                    type="button"
+                    aria-label="Cerrar ventana"
+                    class="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-xl text-[#C9C3D8] transition-colors hover:border-white/20 hover:text-white"
+                >
+                    ×
+                </button>
+            </div>
+
+            <!-- Formulario -->
+            <form id="whatsapp-form" class="mt-6 space-y-5">
+                <div>
+                    <label
+                        for="whatsapp-name"
+                        class="mb-2 block font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                    >
+                        Tu nombre
+                    </label>
+
+                    <input
+                        id="whatsapp-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        required
+                        maxlength="80"
+                        placeholder="Ej. Juan Pérez"
+                        class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white outline-none placeholder:text-white/30 transition-colors focus:border-[#FFD166]/50"
+                    />
+                </div>
+
+                <div>
+                    <label
+                        for="whatsapp-project"
+                        class="mb-2 block font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                    >
+                        ¿Qué necesitas?
+                    </label>
+
+                    <select
+                        id="whatsapp-project"
+                        name="project"
+                        required
+                        class="w-full rounded-xl border border-white/10 bg-[#24103F] px-4 py-3 text-base text-white outline-none transition-colors focus:border-[#FFD166]/50"
+                    >
+                        <option value="" disabled selected>
+                            Selecciona una opción
+                        </option>
+                        <option value="Desarrollo web">Desarrollo web</option>
+                        <option value="Sistema o aplicación">
+                            Sistema o aplicación
+                        </option>
+                        <option value="Automatización de procesos">
+                            Automatización de procesos
+                        </option>
+                        <option value="UI/UX">UI/UX</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label
+                        for="whatsapp-description"
+                        class="mb-2 block font-mono text-xs uppercase tracking-wider text-[#C9C3D8]"
+                    >
+                        Cuéntame brevemente
+                    </label>
+
+                    <textarea
+                        id="whatsapp-description"
+                        name="description"
+                        rows="4"
+                        required
+                        maxlength="500"
+                        placeholder="¿Qué quieres desarrollar o qué problema necesitas resolver?"
+                        class="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-base text-white outline-none placeholder:text-white/30 transition-colors focus:border-[#FFD166]/50"
+                    ></textarea>
+                </div>
+
+                <p
+                    id="whatsapp-error"
+                    class="hidden text-sm text-red-300"
+                    role="alert"
+                ></p>
+
+                <button
+                    type="submit"
+                    class="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFD166] px-5 py-3 text-sm font-semibold text-[#160D2B] transition-transform hover:scale-[1.02]"
+                >
+                    Continuar a WhatsApp
+                    <span
+                        class="transition-transform duration-200 group-hover:translate-x-1"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    const whatsappButton = document.querySelector("#whatsapp-button");
+    const whatsappModal = document.querySelector("#whatsapp-modal");
+    const whatsappDialog = document.querySelector("#whatsapp-dialog");
+    const whatsappClose = document.querySelector("#whatsapp-close");
+    const whatsappForm = document.querySelector("#whatsapp-form");
+    const whatsappError = document.querySelector("#whatsapp-error");
+    const whatsappName = document.querySelector("#whatsapp-name");
+
+    const whatsappUrl = "https://wa.me/593984039120";
+
+    const openWhatsappModal = () => {
+        if (!(whatsappModal instanceof HTMLElement)) return;
+        if (!(whatsappDialog instanceof HTMLElement)) return;
+
+        whatsappModal.classList.remove(
+            "pointer-events-none",
+            "opacity-0",
+        );
+
+        whatsappModal.classList.add(
+            "pointer-events-auto",
+            "opacity-100",
+        );
+
+        whatsappDialog.classList.remove(
+            "translate-y-3",
+            "opacity-0",
+        );
+
+        whatsappDialog.classList.add(
+            "translate-y-0",
+            "opacity-100",
+        );
+
+        whatsappModal.setAttribute("aria-hidden", "false");
+
+        if (whatsappName instanceof HTMLInputElement) {
+            requestAnimationFrame(() => whatsappName.focus());
+        }
+
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeWhatsappModal = () => {
+        if (!(whatsappModal instanceof HTMLElement)) return;
+        if (!(whatsappDialog instanceof HTMLElement)) return;
+
+        whatsappModal.classList.remove(
+            "pointer-events-auto",
+            "opacity-100",
+        );
+
+        whatsappModal.classList.add(
+            "pointer-events-none",
+            "opacity-0",
+        );
+
+        whatsappDialog.classList.remove(
+            "translate-y-0",
+            "opacity-100",
+        );
+
+        whatsappDialog.classList.add(
+            "translate-y-3",
+            "opacity-0",
+        );
+
+        whatsappModal.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+    };
+
+    whatsappButton?.addEventListener("click", openWhatsappModal);
+    whatsappClose?.addEventListener("click", closeWhatsappModal);
+
+    whatsappModal?.addEventListener("click", (event) => {
+        if (event.target === whatsappModal) {
+            closeWhatsappModal();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeWhatsappModal();
+        }
+    });
+
+    whatsappForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (
+            !(whatsappName instanceof HTMLInputElement) ||
+            !(whatsappForm instanceof HTMLFormElement)
+        ) {
+            return;
+        }
+
+        const project = document.querySelector("#whatsapp-project");
+        const description = document.querySelector("#whatsapp-description");
+
+        if (
+            !(project instanceof HTMLSelectElement) ||
+            !(description instanceof HTMLTextAreaElement)
+        ) {
+            return;
+        }
+
+        const name = whatsappName.value.trim();
+        const projectType = project.value.trim();
+        const projectDescription = description.value.trim();
+
+        if (!name || !projectType || !projectDescription) {
+            if (whatsappError instanceof HTMLElement) {
+                whatsappError.textContent =
+                    "Completa todos los campos para continuar.";
+                whatsappError.classList.remove("hidden");
+            }
+
+            return;
+        }
+
+        const message = [
+            `Hola Carlos, soy ${name}.`,
+            "",
+            `Me interesa: ${projectType}.`,
+            "",
+            `Sobre mi proyecto: ${projectDescription}`,
+        ].join("\n");
+
+        const separator = whatsappUrl.includes("?") ? "&" : "?";
+        const finalUrl =
+            `${whatsappUrl}${separator}text=${encodeURIComponent(message)}`;
+
+        window.open(finalUrl, "_blank", "noopener,noreferrer");
+
+        closeWhatsappModal();
+    });
+</script>
